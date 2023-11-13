@@ -2,7 +2,6 @@ import { useState } from "react";
 import Alert from "./Components/Alert";
 import { Button } from "./Components/Button";
 import ListGroup from "./Components/ListGroup";
-import Message from "./Message";
 
 function App() {
   let items = ["New York", "New Jersey", "Newcastle", "Bellambi", "Sydney"];
