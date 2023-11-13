@@ -2,6 +2,7 @@ import { useState } from "react";
 import Alert from "./Components/Alert";
 import { Button } from "./Components/Button";
 import ListGroup from "./Components/ListGroup";
+import { BsFillCalendarMinusFill } from "react-icons/bs";
 
 function App() {
   let items = ["New York", "New Jersey", "Newcastle", "Bellambi", "Sydney"];
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div>
+      <BsFillCalendarMinusFill color="red" size={40} />
       <ListGroup
         items={items}
         heading={"Cities"}
