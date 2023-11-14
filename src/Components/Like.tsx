@@ -13,6 +13,6 @@ export const Like = (props: Props) => {
     props.onClick();
   };
 
-  if (heartColorStatus) return <AiFillHeart onClick={toggle} />;
-  return <AiOutlineHeart onClick={toggle} />;
+  if (heartColorStatus) return <AiFillHeart onClick={toggle} size={60} />;
+  return <AiOutlineHeart onClick={toggle} size={40} />;
 };
