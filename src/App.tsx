@@ -10,15 +10,23 @@ function App() {
   //const [lastName, setLastName] = useState("");
   //const [person, setPerson] = useState(["happy ", "cheerful"]);
 
-  const [cartItems, setCartItems] = useState(["produce1", "produce2"]);
+  const [game, setGame] = useState({
+    id: 1,
+    player: {
+      name: "John",
+    },
+  });
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    setGame({ ...game, player: { ...game.player, name: "Scott" } });
+  };
 
   return (
     <>
-      <NavBar cartItemsCount={cartItems.length} />
-      <Cart cartItems={cartItems} handleClear={() => setCartItems([])} />
-
+      {game.id} + {game.player.name}
+      <button onClick={handleClick}>change</button>
+      {/* <NavBar cartItemsCount={cartItems.length} />
+      <Cart cartItems={cartItems} handleClear={() => setCartItems([])} /> */}
       {/* <Like onClick={handleClick} /> */}
     </>
   );
