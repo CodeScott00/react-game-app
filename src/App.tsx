@@ -5,24 +5,17 @@ import { useState } from "react";
 function App() {
   //const [firstName, setFirstName] = useState("");
   //const [lastName, setLastName] = useState("");
-  const [person, setPerson] = useState({
-    firstName: "Scott",
-    address: {
-      city: "Beach",
-      postcode: 2000,
-    },
-  });
+  const [person, setPerson] = useState(["happy ", "cheerful"]);
 
   const handleClick = () => {
-    setPerson({
-      ...person,
-      address: { ...person.address, postcode: 2001 },
-    });
+    // add //setPerson([...person, " excited"]); //we dont want to modify state directly so we make a copy of the object or array and edit that
+    // remove - setPerson(person.filter((peep) => peep !== "happy "));
+    // update setPerson(person.map((peep) => (peep === "happy " ? "happiness " : peep)));
   };
 
   return (
     <>
-      <div>{person.address.postcode}</div>
+      <div>{person}</div>
       <Like onClick={handleClick} />
     </>
   );
