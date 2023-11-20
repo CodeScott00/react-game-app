@@ -5,11 +5,13 @@ import produce from "immer";
 import NavBar from "./Components/NavBar";
 import Cart from "./Components/Cart";
 import ExpandableText from "./Components/ExpandableText";
+import Form from "./Components/Form";
 
 function App() {
   return (
     <>
-      <ExpandableText maxChars={10}>
+      <Form />
+      {/* <ExpandableText maxChars={10}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum debitis
         incidunt exercitationem earum numquam? Dolore, placeat sapiente
         accusamus quos ab, ipsa quo nisi quas assumenda, dolor repudiandae odit
@@ -22,7 +24,7 @@ function App() {
         commodi quaerat? Nam corrupti ipsum id, non atque soluta repellat
         repellendus dolor aliquid, quam nesciunt ducimus consequatur, adipisci
         quaerat possimus.
-      </ExpandableText>
+      </ExpandableText> */}
     </>
   );
 }
