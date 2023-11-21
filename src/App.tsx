@@ -6,11 +6,57 @@ import NavBar from "./Components/NavBar";
 import Cart from "./Components/Cart";
 import ExpandableText from "./Components/ExpandableText";
 import Form from "./Components/Form";
+import ExpenseForm from "./Components/Expense/ExpenseForm";
+import ExpenseList from "./Components/Expense/ExpenseList";
+import ExpenseFilter from "./Components/Expense/ExpenseFilter";
+
+export const categories = ["Groceries", "Utilities", "Entertainment"];
 
 function App() {
+  const [selectedCategory, setSelectedCatgory] = useState("");
+  const [expenses, setExpenses] = useState([
+    {
+      id: 1,
+      desciption: "yes",
+      amount: 1,
+      category: "Utilities",
+    },
+    {
+      id: 2,
+      desciption: "yes",
+      amount: 2,
+      category: "Entertainment",
+    },
+  ]);
+
+  const onDelete = (id: number) => {
+    setExpenses(expenses.filter((event) => event.id !== id));
+  };
+
+  const handleSelect = (category: string) => {
+    setSelectedCatgory(category);
+  };
+
+  const visableExpenses = selectedCategory
+    ? expenses.filter((expense) => expense.category == selectedCategory)
+    : expenses;
+
+  const onSubmit = (event: SubmitEvent) => {
+    event.preventDefault();
+    console.log("submit");
+  };
+
   return (
     <>
-      <Form />
+      <div className="mb-5">
+        <ExpenseForm onSubmit={onSubmit} />
+      </div>
+      <div className="mb-3">
+        <ExpenseFilter onSelectCategory={handleSelect} />
+      </div>
+
+      <ExpenseList expenses={visableExpenses} onDelete={onDelete} />
+      {/* <Form /> */}
       {/* <ExpandableText maxChars={10}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum debitis
         incidunt exercitationem earum numquam? Dolore, placeat sapiente
